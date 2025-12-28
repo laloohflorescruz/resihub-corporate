@@ -69,53 +69,113 @@
 
 <body class="bg-corporate-50 text-corporate-900 font-sans">
     <!-- Header -->
-    <header class="bg-[#F7F8EF] shadow-lg sticky top-0 z-50">
+    <!-- Header - Professional Design -->
+    <header id="main-header" class="bg-[#F7F8EF] shadow-sm sticky top-0 z-50 transition-all duration-300 relative border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-3 sm:py-4 md:py-6">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="img/logo.jpg" alt="ResiHub Logo" class="h-16 w-auto sm:h-24 md:h-32 lg:h-40 mr-2 sm:mr-3 hover:opacity-90 transition-opacity">
+            <div id="header-container" class="flex justify-between items-center py-3 transition-all duration-300">
+                <!-- Logo Section -->
+                <div class="flex items-center flex-shrink-0">
+                    <a href="index.html" class="flex items-center group" title="Volver al inicio">
+                        <div class="relative">
+                            <img id="header-logo" src="img/logo.jpg" alt="ResiHub Logo" class="h-14 sm:h-16 md:h-20 lg:h-24 w-auto transition-all duration-300 group-hover:scale-105">
+                        </div>
                     </a>
                 </div>
-                <nav class="hidden md:flex md:space-x-4 lg:space-x-6">
-                    <a href="features.html" class="text-sm lg:text-base text-gray-700 hover:text-blue-600 transition-all flex items-center px-3 py-2 rounded-lg hover:bg-blue-50">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                        Características
-                    </a>
-                    <a href="index.html#pricing" class="text-sm lg:text-base text-gray-700 hover:text-blue-600 transition-all flex items-center px-3 py-2 rounded-lg hover:bg-blue-50">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                        </svg>
-                        Planes
-                    </a>
-                    <a href="index.html#contact" class="text-sm lg:text-base text-gray-700 hover:text-blue-600 transition-all flex items-center px-3 py-2 rounded-lg hover:bg-blue-50">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        Contacto
-                    </a>
-                    <a href="get-resihub.html" class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white px-4 py-2 rounded-lg text-sm lg:text-base font-semibold transition-all shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                        Obtener ResiHub
-                    </a>
-                </nav>
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl text-gray-600 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center">
+                    <!-- Navigation Links - Professional Pill Style -->
+                    <div class="flex items-center bg-white/60 backdrop-blur-sm rounded-full px-1.5 py-1.5 border border-gray-200/80 shadow-sm">
+                        <a href="features.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-full transition-all duration-200">
+                            Características
+                        </a>
+                        <a href="index.html#pricing" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-full transition-all duration-200">
+                            Planes
+                        </a>
+                        <a href="#" class="px-4 py-2 text-sm font-medium text-emerald-700 bg-emerald-50 rounded-full transition-all duration-200">
+                            Comparar
+                        </a>
+                        <a href="index.html#testimonials" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-full transition-all duration-200">
+                            Testimonios
+                        </a>
+                        <a href="index.html#contact" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-full transition-all duration-200">
+                            Contacto
+                        </a>
+                    </div>
+
+                    <!-- Separator -->
+                    <div class="h-5 w-px bg-gray-300 mx-4"></div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex items-center gap-3">
+                        <a href="get-resihub.html" class="group inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-full shadow-md shadow-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/30 hover:from-emerald-500 hover:to-emerald-600 transition-all duration-300">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <span>Empezar</span>
+                        </a>
+
+                        <a href="https://cloud.resihub.crudcreativo.com" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center px-5 py-2.5 text-sm font-semibold text-gray-700 bg-white rounded-full border border-gray-300 hover:border-emerald-500 hover:text-emerald-700 shadow-sm hover:shadow-md transition-all duration-300">
+                            <svg class="w-4 h-4 mr-2 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                            </svg>
+                            <span>Acceder</span>
+                            <svg class="w-3.5 h-3.5 ml-1.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <a href="features.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50">Caracteristicas</a>
-            <a href="index.html#pricing" class="block px-4 py-3 text-gray-700 hover:bg-blue-50">Planes</a>
-            <a href="index.html#contact" class="block px-4 py-3 text-gray-700 hover:bg-blue-50">Contacto</a>
-            <a href="get-resihub.html" class="block px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold text-center mx-4 my-2 rounded-lg">Obtener ResiHub</a>
+
+        <!-- Mobile Menu - Professional Design -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#F7F8EF] shadow-2xl border-t border-gray-200 z-50">
+            <div class="px-5 py-5 space-y-1">
+                <!-- Navigation Links -->
+                <a href="features.html" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
+                    Características
+                </a>
+                <a href="index.html#pricing" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
+                    Planes
+                </a>
+                <a href="#" class="block px-4 py-3 text-blue-600 bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
+                    Comparar Planes
+                </a>
+                <a href="index.html#testimonials" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
+                    Testimonios
+                </a>
+                <a href="index.html#contact" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
+                    Contacto
+                </a>
+
+                <!-- Separator -->
+                <div class="h-px bg-gray-200 my-3"></div>
+
+                <!-- CTA Buttons -->
+                <a href="get-resihub.html" class="flex items-center justify-center px-4 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white rounded-xl font-semibold transition-all duration-300 shadow-md shadow-emerald-500/25">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    Empezar Ahora
+                </a>
+                <a href="https://cloud.resihub.crudcreativo.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center px-4 py-3 bg-white border-2 border-gray-200 hover:border-blue-500 text-gray-700 hover:text-blue-600 rounded-xl font-semibold transition-all duration-300">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                    </svg>
+                    Acceder
+                    <svg class="w-3.5 h-3.5 ml-1.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </header>
 

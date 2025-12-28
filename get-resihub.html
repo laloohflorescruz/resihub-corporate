@@ -101,115 +101,117 @@
 
 <body class="bg-corporate-50 text-corporate-900 font-sans">
     <!-- Header -->
-    <header id="main-header" class="bg-[#F7F8EF] shadow-lg sticky top-0 z-50 transition-all duration-300 relative">
+    <!-- Header - Professional Design -->
+    <header id="main-header" class="bg-[#F7F8EF] shadow-sm sticky top-0 z-50 transition-all duration-300 relative border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="header-container" class="flex justify-between items-center py-3 sm:py-4 md:py-6 transition-all duration-300">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center" title="Volver al inicio">
-                        <img id="header-logo" src="img/logo.jpg" alt="ResiHub Logo" class="h-16 w-auto sm:h-24 md:h-32 lg:h-40 xl:h-[180px] mr-2 sm:mr-3 transition-all duration-300 hover:opacity-90">
+            <div id="header-container" class="flex justify-between items-center py-3 transition-all duration-300">
+                <!-- Logo Section -->
+                <div class="flex items-center flex-shrink-0">
+                    <a href="index.html" class="flex items-center group" title="Volver al inicio">
+                        <div class="relative">
+                            <img id="header-logo" src="img/logo.jpg" alt="ResiHub Logo" class="h-14 sm:h-16 md:h-20 lg:h-24 w-auto transition-all duration-300 group-hover:scale-105">
+                        </div>
                     </a>
                 </div>
-                <div class="flex items-center">
-                    <button id="mobile-menu-button"
-                        class="p-2 rounded-md text-gray-700 hover:text-blue-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 md:hidden">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                    <nav class="hidden md:flex md:space-x-4 lg:space-x-6 xl:space-x-8">
-                        <a href="index.html"
-                            class="relative text-sm lg:text-base text-gray-700 hover:text-blue-600 transition-all duration-300 flex items-center px-3 py-2 rounded-lg hover:bg-blue-50 group">
-                            <svg class="w-4 h-4 mr-2 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                            </svg>
-                            <span class="relative">
-                                Inicio
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-                            </span>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2.5 rounded-xl text-gray-600 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center">
+                    <!-- Navigation Links - Professional Pill Style -->
+                    <div class="flex items-center bg-white/60 backdrop-blur-sm rounded-full px-1.5 py-1.5 border border-gray-200/80 shadow-sm">
+                        <a href="index.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-full transition-all duration-200">
+                            Inicio
                         </a>
-                        <a href="features.html"
-                            class="relative text-sm lg:text-base text-gray-700 hover:text-blue-600 transition-all duration-300 flex items-center px-3 py-2 rounded-lg hover:bg-blue-50 group">
-                            <svg class="w-4 h-4 mr-2 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                            <span class="relative">
-                                Caracteristicas
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-                            </span>
+                        <a href="features.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-full transition-all duration-200">
+                            Características
                         </a>
-                        <a href="index.html#pricing"
-                            class="relative text-sm lg:text-base text-gray-700 hover:text-blue-600 transition-all duration-300 flex items-center px-3 py-2 rounded-lg hover:bg-blue-50 group">
-                            <svg class="w-4 h-4 mr-2 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                            </svg>
-                            <span class="relative">
-                                Planes
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-                            </span>
+                        <a href="index.html#pricing" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-full transition-all duration-200">
+                            Planes
                         </a>
-                        <a href="comparar-planes.html"
-                            class="relative text-sm lg:text-base text-gray-700 hover:text-blue-600 transition-all duration-300 flex items-center px-3 py-2 rounded-lg hover:bg-blue-50 group">
-                            <svg class="w-4 h-4 mr-2 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                            </svg>
-                            <span class="relative">
-                                Comparar
-                                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-                            </span>
+                        <a href="comparar-planes.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-full transition-all duration-200">
+                            Comparar
                         </a>
-                        <a href="#solicitar"
-                            class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-4 py-2 lg:px-5 rounded-lg text-sm lg:text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center">
+                        <a href="index.html#testimonials" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-full transition-all duration-200">
+                            Testimonios
+                        </a>
+                        <a href="index.html#contact" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-full transition-all duration-200">
+                            Contacto
+                        </a>
+                    </div>
+
+                    <!-- Separator -->
+                    <div class="h-5 w-px bg-gray-300 mx-4"></div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex items-center gap-3">
+                        <a href="#solicitar" class="group inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-full shadow-md shadow-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/30 hover:from-emerald-500 hover:to-emerald-600 transition-all duration-300">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
-                            Empezar Ahora
+                            <span>Empezar</span>
                         </a>
-                    </nav>
-                </div>
+
+                        <a href="https://cloud.resihub.crudcreativo.com" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center px-5 py-2.5 text-sm font-semibold text-gray-700 bg-white rounded-full border border-gray-300 hover:border-emerald-500 hover:text-emerald-700 shadow-sm hover:shadow-md transition-all duration-300">
+                            <svg class="w-4 h-4 mr-2 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                            </svg>
+                            <span>Acceder</span>
+                            <svg class="w-3.5 h-3.5 ml-1.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#f5f3ed] shadow-lg border-t border-gray-200 z-50">
-            <div class="px-4 py-4 space-y-4">
-                <a href="index.html" class="block text-gray-700 hover:text-blue-900 transition-colors flex items-center py-2">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
+
+        <!-- Mobile Menu - Professional Design -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#F7F8EF] shadow-2xl border-t border-gray-200 z-50">
+            <div class="px-5 py-5 space-y-1">
+                <!-- Navigation Links -->
+                <a href="index.html" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
                     Inicio
                 </a>
-                <a href="features.html" class="block text-gray-700 hover:text-blue-900 transition-colors flex items-center py-2">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                    Caracteristicas
+                <a href="features.html" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
+                    Características
                 </a>
-                <a href="index.html#pricing" class="block text-gray-700 hover:text-blue-900 transition-colors flex items-center py-2">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                    </svg>
+                <a href="index.html#pricing" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
                     Planes
                 </a>
-                <a href="comparar-planes.html" class="block text-gray-700 hover:text-blue-900 transition-colors flex items-center py-2">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                    </svg>
+                <a href="comparar-planes.html" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
                     Comparar Planes
                 </a>
-                <a href="#solicitar"
-                    class="block bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-4 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg flex items-center justify-center">
+                <a href="index.html#testimonials" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
+                    Testimonios
+                </a>
+                <a href="index.html#contact" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl font-medium transition-all duration-200">
+                    Contacto
+                </a>
+
+                <!-- Separator -->
+                <div class="h-px bg-gray-200 my-3"></div>
+
+                <!-- CTA Buttons -->
+                <a href="#solicitar" class="flex items-center justify-center px-4 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white rounded-xl font-semibold transition-all duration-300 shadow-md shadow-emerald-500/25">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                     Empezar Ahora
+                </a>
+                <a href="https://cloud.resihub.crudcreativo.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center px-4 py-3 bg-white border-2 border-gray-200 hover:border-blue-500 text-gray-700 hover:text-blue-600 rounded-xl font-semibold transition-all duration-300">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                    </svg>
+                    Acceder
+                    <svg class="w-3.5 h-3.5 ml-1.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -233,7 +235,7 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-300"></span>
                     </span>
-                    <span class="text-sm font-medium text-white">get.resihub.crudcreativo.com</span>
+                    <!-- <span class="text-sm font-medium text-white">get.resihub.crudcreativo.com</span> -->
                 </div>
 
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in">
