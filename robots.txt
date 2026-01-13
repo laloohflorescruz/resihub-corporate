@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://resihub.crudcreativo.com/sitemap.xml
+Sitemap: https://tryresihub.com/sitemap.xml

@@ -12,7 +12,7 @@ $from_email = "noreply@resihub.com";
 $from_name = "ResiHub Contact Form";
 
 // Google reCAPTCHA Enterprise Configuration
-$recaptcha_site_key = "6LdnuAIsAAAAAF72v1H2u4orrY4UF_ymi_wUx9wF";
+$recaptcha_site_key = "6LeQgjosAAAAAAAffIFlezWPhjKf0Pi6E5zeMP2X";
 $recaptcha_project_id = "crudcreativo";
 $recaptcha_action = "submit";
 $recaptcha_score_threshold = 0.4; // Minimum score to accept (0.0 - 1.0)
@@ -363,7 +363,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class='container'>
                         <div class='header'>
                             <h2 style='margin: 0 0 5px 0;'>Nueva Solicitud de ResiHub</h2>
-                            <p style='margin: 0; opacity: 0.9;'>get.resihub.crudcreativo.com</p>
+                            <p style='margin: 0; opacity: 0.9;'>get.tryresihub.com</p>
                             <div class='plan-badge'>$plan_label</div>
                         </div>
                         <div class='content'>
