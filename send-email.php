@@ -7,7 +7,7 @@ use Google\Cloud\RecaptchaEnterprise\V1\Assessment;
 use Google\Cloud\RecaptchaEnterprise\V1\CreateAssessmentRequest;
 
 // Configuración
-$to_email = "resihub@crudcreativo.com";
+$to_email = "info@tryresihub.com";
 $from_email = "noreply@resihub.com";
 $from_name = "ResiHub Contact Form";
 
