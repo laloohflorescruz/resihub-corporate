@@ -81,6 +81,9 @@
         });
     </script>
 
+    <!-- Google reCAPTCHA Enterprise -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeQgjosAAAAAAAffIFlezWPhjKf0Pi6E5zeMP2X"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -330,12 +333,12 @@
 
                     <!-- CTA Buttons -->
                     <div class="flex items-center gap-3">
-                        <a href="get-resihub.html" class="group inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-full shadow-md shadow-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/30 hover:from-emerald-500 hover:to-emerald-600 transition-all duration-300">
+                        <button onclick="openModal('start', '')" class="group inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-full shadow-md shadow-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/30 hover:from-emerald-500 hover:to-emerald-600 transition-all duration-300">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                             <span>Empezar</span>
-                        </a>
+                        </button>
 
                         <a href="https://cloud.tryresihub.com" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center px-5 py-2.5 text-sm font-semibold text-gray-700 bg-white rounded-full border border-gray-300 hover:border-emerald-500 hover:text-emerald-700 shadow-sm hover:shadow-md transition-all duration-300">
                             <svg class="w-4 h-4 mr-2 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -378,12 +381,12 @@
                 <div class="h-px bg-gray-200 my-3"></div>
 
                 <!-- CTA Buttons -->
-                <a href="get-resihub.html" class="flex items-center justify-center px-4 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white rounded-xl font-semibold transition-all duration-300 shadow-md shadow-emerald-500/25">
+                <button onclick="openModal('start', '')" class="flex items-center justify-center px-4 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white rounded-xl font-semibold transition-all duration-300 shadow-md shadow-emerald-500/25 w-full">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                     Empezar Ahora
-                </a>
+                </button>
                 <a href="https://cloud.tryresihub.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center px-4 py-3 bg-white border-2 border-gray-200 hover:border-blue-500 text-gray-700 hover:text-blue-600 rounded-xl font-semibold transition-all duration-300">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
@@ -445,12 +448,12 @@
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14 sm:mb-16">
-                    <a href="index.html#contact" class="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all duration-300">
+                    <button onclick="openModal('start', '')" class="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all duration-300">
                         Solicitar Demo Gratis
                         <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
-                    </a>
+                    </button>
                     <a href="index.html#pricing" class="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-300">
                         <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
@@ -1641,7 +1644,7 @@
                         <h3 class="text-lg font-semibold text-gray-900 mb-2">Email</h3>
                         <p class="text-gray-500 text-sm mb-4">Respuesta en menos de 24 horas</p>
                         <a href="mailto:info@tryresihub.com" class="text-blue-600 font-medium hover:text-blue-700 transition-colors inline-flex items-center gap-2 group/link">
-                            info@tryresihub.com
+                            info[@]tryresihub.com
                             <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
@@ -1704,12 +1707,12 @@
                         </p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="index.html#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                        <button onclick="openModal('start', '')" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                             Solicitar Demo
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                             </svg>
-                        </a>
+                        </button>
                         <a href="index.html#pricing" class="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white font-semibold rounded-xl border-2 border-white/30 hover:bg-white/10 hover:border-white/50 transition-all duration-300">
                             Ver Planes
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1781,7 +1784,7 @@
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            info@resihub.com
+                            info[@]resihub.com
                         </li>
                         <li class="flex items-center gap-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2057,5 +2060,233 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
     </button>
+
+    <!-- Start Modal -->
+    <div id="start-modal" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-gray-900/40 backdrop-blur-sm" onclick="closeModal('start-modal')"></div>
+
+        <!-- Modal Content -->
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="relative bg-white rounded-2xl shadow-xl max-w-2xl w-full transform transition-all duration-300 scale-95 opacity-0 modal-content border border-gray-200 max-h-[90vh] overflow-y-auto">
+                <!-- Header -->
+                <div class="sticky top-0 bg-white px-6 sm:px-8 py-5 border-b border-gray-100 z-10">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Comenzar con ResiHub</h3>
+                                <p class="text-gray-500 text-sm">Completa el formulario para iniciar</p>
+                            </div>
+                        </div>
+                        <button onclick="closeModal('start-modal')" class="p-2 rounded-lg hover:bg-gray-100 text-gray-400 hover:text-gray-600 transition-all duration-200" title="Cerrar (ESC)">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Form Body -->
+                <div class="p-6 sm:p-8">
+                    <form id="start-form" class="space-y-6" method="POST" action="send-email.php">
+                        <input type="hidden" name="form_type" value="start">
+                        <input type="hidden" id="start-plan" name="plan">
+                        <div id="start-message" class="hidden p-4 rounded-xl"></div>
+
+                        <!-- Personal Info Section -->
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                Información Personal
+                            </h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="start-name" class="block text-sm font-medium text-gray-600 mb-1.5">Nombre Completo *</label>
+                                    <input type="text" id="start-name" name="name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all duration-200 bg-white" placeholder="Ej: Juan Pérez">
+                                </div>
+                                <div>
+                                    <label for="start-email" class="block text-sm font-medium text-gray-600 mb-1.5">Correo Electrónico *</label>
+                                    <input type="email" id="start-email" name="email" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all duration-200 bg-white" placeholder="tu@email.com">
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="start-phone" class="block text-sm font-medium text-gray-600 mb-1.5">Teléfono *</label>
+                                    <input type="tel" id="start-phone" name="phone" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all duration-200 bg-white" placeholder="+1 (829) 556-2244">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Property Info Section -->
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                                Información del Condominio
+                            </h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="start-empresa" class="block text-sm font-medium text-gray-600 mb-1.5">Nombre del Condominio *</label>
+                                    <input type="text" id="start-empresa" name="empresa" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all duration-200 bg-white" placeholder="Ej: Residencial Los Pinos">
+                                </div>
+                                <div>
+                                    <label for="start-unidades" class="block text-sm font-medium text-gray-600 mb-1.5">Número de Unidades *</label>
+                                    <input type="number" id="start-unidades" name="unidades" required min="1" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all duration-200 bg-white" placeholder="50">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comments Section -->
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                                Comentarios Adicionales
+                            </h4>
+                            <div>
+                                <label for="start-comments" class="block text-sm font-medium text-gray-600 mb-1.5">¿Algo más que debamos saber? <span class="text-gray-400">(Opcional)</span></label>
+                                <textarea id="start-comments" name="comments" rows="3" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all duration-200 bg-white resize-none" placeholder="Cuéntanos sobre tus necesidades específicas, desafíos actuales o cualquier pregunta que tengas..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-2">
+                            <button type="submit" id="start-submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2">
+                                <span>Enviar Solicitud</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </button>
+                            <p class="text-center text-gray-400 text-xs mt-3">
+                                Te responderemos en menos de 24 horas · <kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-gray-500 font-mono text-xs">ESC</kbd> para cerrar
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openModal(type, plan) {
+            const modal = document.getElementById(type + '-modal');
+            const planInput = document.getElementById(type + '-plan');
+            const modalContent = modal.querySelector('.modal-content');
+
+            if (planInput) planInput.value = plan || '';
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            // Trigger animation
+            requestAnimationFrame(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            });
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const modalContent = modal.querySelector('.modal-content');
+
+            // Animate out
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+
+            // Wait for animation then hide
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 200);
+        }
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('start-modal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    closeModal('start-modal');
+                }
+            }
+        });
+
+        // AJAX Form Handler with reCAPTCHA
+        function handleFormSubmit(formId, messageId, successCallback) {
+            const form = document.getElementById(formId);
+            const messageDiv = document.getElementById(messageId);
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // Disable submit button
+                const originalText = submitButton.innerHTML;
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<span class="flex items-center justify-center"><svg class="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Enviando...</span>';
+
+                try {
+                    // Execute reCAPTCHA Enterprise
+                    await new Promise((resolve) => grecaptcha.enterprise.ready(resolve));
+                    const token = await grecaptcha.enterprise.execute('6LeQgjosAAAAAAAffIFlezWPhjKf0Pi6E5zeMP2X', {action: 'submit'});
+
+                    // Get form data
+                    const formData = new FormData(form);
+                    formData.append('recaptcha_token', token);
+
+                    const response = await fetch('send-email.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const result = await response.json();
+
+                    // Show message
+                    messageDiv.classList.remove('hidden');
+                    if (result.success) {
+                        messageDiv.className = 'p-4 rounded-xl bg-green-100 text-green-800 mb-4';
+                        messageDiv.textContent = result.message;
+                        form.reset();
+
+                        // Track form submission in Google Analytics
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'form_submit', {
+                                'event_category': 'Form',
+                                'event_label': formId,
+                                'value': 1
+                            });
+                        }
+
+                        if (successCallback) {
+                            setTimeout(() => {
+                                successCallback();
+                                messageDiv.classList.add('hidden');
+                            }, 2000);
+                        }
+                    } else {
+                        messageDiv.className = 'p-4 rounded-xl bg-red-100 text-red-800 mb-4';
+                        if (result.errors && result.errors.length > 0) {
+                            messageDiv.innerHTML = '<ul class="list-disc list-inside">' +
+                                result.errors.map(err => '<li>' + err + '</li>').join('') +
+                                '</ul>';
+                        } else {
+                            messageDiv.textContent = result.message;
+                        }
+                    }
+                } catch (error) {
+                    messageDiv.classList.remove('hidden');
+                    messageDiv.className = 'p-4 rounded-xl bg-red-100 text-red-800 mb-4';
+                    messageDiv.textContent = 'Error al enviar el formulario. Por favor, intenta nuevamente.';
+                } finally {
+                    // Re-enable submit button
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalText;
+                }
+            });
+        }
+
+        // Initialize form handler
+        handleFormSubmit('start-form', 'start-message', () => closeModal('start-modal'));
+    </script>
 </body>
 </html>
