@@ -8,14 +8,21 @@ use Google\Cloud\RecaptchaEnterprise\V1\CreateAssessmentRequest;
 
 // Configuración
 $to_email = "info@tryresihub.com";
-$from_email = "noreply@resihub.com";
+$from_email = "noreply@tryresihub.com";
 $from_name = "ResiHub Contact Form";
 
 // Google reCAPTCHA Enterprise Configuration
 $recaptcha_site_key = "6LeQgjosAAAAAAAffIFlezWPhjKf0Pi6E5zeMP2X";
 $recaptcha_project_id = "crudcreativo";
-$recaptcha_action = "submit";
 $recaptcha_score_threshold = 0.4; // Minimum score to accept (0.0 - 1.0)
+
+// reCAPTCHA actions per form type
+$recaptcha_actions = [
+    'contact' => 'contact',
+    'start' => 'start',
+    'get-resihub' => 'get_resihub',
+    'sales' => 'sales'
+];
 
 // Headers para el email
 $headers = "MIME-Version: 1.0" . "\r\n";
@@ -78,13 +85,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
     $response = [];
 
+    // Determinar el tipo de formulario primero para obtener la acción correcta
+    $form_type = isset($_POST['form_type']) ? sanitize_input($_POST['form_type']) : 'contact';
+
+    // Obtener la acción de reCAPTCHA esperada para este tipo de formulario
+    $expected_action = isset($recaptcha_actions[$form_type]) ? $recaptcha_actions[$form_type] : 'contact';
+
     // Verificar reCAPTCHA Enterprise
     $recaptcha_token = isset($_POST['recaptcha_token']) ? $_POST['recaptcha_token'] : '';
 
     if (empty($recaptcha_token)) {
         $errors[] = "Error de verificación de seguridad. Por favor, recarga la página e intenta nuevamente.";
     } else {
-        $recaptcha_response = verify_recaptcha_enterprise($recaptcha_token, $recaptcha_site_key, $recaptcha_project_id, $recaptcha_action);
+        $recaptcha_response = verify_recaptcha_enterprise($recaptcha_token, $recaptcha_site_key, $recaptcha_project_id, $expected_action);
 
         if (!$recaptcha_response || !$recaptcha_response->success) {
             $errors[] = "Verificación de seguridad fallida. Por favor, intenta nuevamente.";
@@ -104,9 +117,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo json_encode($response);
         exit;
     }
-
-    // Determinar el tipo de formulario
-    $form_type = isset($_POST['form_type']) ? sanitize_input($_POST['form_type']) : 'contact';
 
     // Validar según el tipo de formulario
     switch($form_type) {
