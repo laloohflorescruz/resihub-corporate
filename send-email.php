@@ -7,14 +7,14 @@ use Google\Cloud\RecaptchaEnterprise\V1\Assessment;
 use Google\Cloud\RecaptchaEnterprise\V1\CreateAssessmentRequest;
 
 // Configuración
-$to_email = "info@tryresihub.com";
-$from_email = "noreply@tryresihub.com";
+$to_email = "info@resihubapp.com";
+$from_email = "noreply@resihubapp.com";
 $from_name = "ResiHub Contact Form";
 
 // Google reCAPTCHA Enterprise Configuration
-$recaptcha_site_key = "6LeQgjosAAAAAAAffIFlezWPhjKf0Pi6E5zeMP2X";
+$recaptcha_site_key = "6LewSdksAAAAAOcEeGnJ3B1U2vQey92BiadZm1a7";
 $recaptcha_project_id = "crudcreativo";
-$recaptcha_score_threshold = 0.4; // Minimum score to accept (0.0 - 1.0)
+$recaptcha_score_threshold = 0.5; // Minimum score to accept (0.0 - 1.0)
 
 // reCAPTCHA actions per form type
 $recaptcha_actions = [
@@ -373,7 +373,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class='container'>
                         <div class='header'>
                             <h2 style='margin: 0 0 5px 0;'>Nueva Solicitud de ResiHub</h2>
-                            <p style='margin: 0; opacity: 0.9;'>get.tryresihub.com</p>
+                            <p style='margin: 0; opacity: 0.9;'>get.resihubapp.com</p>
                             <div class='plan-badge'>$plan_label</div>
                         </div>
                         <div class='content'>

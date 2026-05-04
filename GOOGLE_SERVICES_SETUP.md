@@ -43,7 +43,7 @@ Google Analytics 4 (GA4) is the latest version of Google Analytics that provides
 1. After creating the property, you'll be prompted to set up a data stream
 2. Select **Web**
 3. Enter your website details:
-   - **Website URL**: https://tryresihub.com
+   - **Website URL**: https://resihubapp.com
    - **Stream Name**: ResiHub Corporate Website
 4. Click **Create Stream**
 5. You'll see your **Measurement ID** (format: `G-XXXXXXXXXX`)
@@ -117,7 +117,7 @@ Google reCAPTCHA v3 has been integrated into all forms on the ResiHub corporate 
    - **Label**: ResiHub Corporate Site
    - **reCAPTCHA type**: Select "reCAPTCHA v3"
    - **Domains**: Add your domain(s):
-     - tryresihub.com
+     - resihubapp.com
      - localhost (for testing)
      - Any other domains you'll use
 4. Accept the terms and click "Submit"
