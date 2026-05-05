@@ -1,12 +1,25 @@
-- name: 📂 Deploy via lftp
-  run: |
-    sudo apt-get update
-    sudo apt-get install -y lftp
-    lftp -e "
-      set ftp:passive-mode true;
-      set net:timeout 60;
-      set net:max-retries 2;
-      open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-      mirror -R ./ ${{ secrets.FTP_DIR }} --delete --verbose;
-      bye
-    "
+name: Deploy to FTP
+
+on:
+  push:
+    branches: [ "main" ] # Or your specific branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Sync files via FTP
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+          lftp -e "
+            set ftp:passive-mode true;
+            set net:timeout 60;
+            set net:max-retries 2;
+            open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
+            mirror -R ./ ${{ secrets.FTP_DIR }} --delete --verbose;
+            bye
+          "
