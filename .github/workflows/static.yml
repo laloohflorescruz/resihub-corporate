@@ -3,10 +3,10 @@
     sudo apt-get update
     sudo apt-get install -y lftp
     lftp -e "
-    set ftp:passive-mode true;
-    set net:timeout 60;
-    set net:max-retries 2;
-    open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-    mirror -R ./ ${{ secrets.FTP_DIR }} --delete --verbose;
-    bye
+      set ftp:passive-mode true;
+      set net:timeout 60;
+      set net:max-retries 2;
+      open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
+      mirror -R ./ ${{ secrets.FTP_DIR }} --delete --verbose;
+      bye
     "
