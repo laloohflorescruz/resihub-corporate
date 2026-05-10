@@ -32,60 +32,93 @@ function validate_email($email) {
 }
 
 function verify_recaptcha_enterprise($token, $site_key, $project_id, $api_key, $expected_action) {
-    // Si no hay API key configurada, permitir el envío para evitar bloqueos de configuración
     if (empty($api_key)) {
-        error_log("reCAPTCHA: API key no configurada, omitiendo verificación.");
-        $result = new stdClass();
-        $result->success     = true;
-        $result->score       = 1.0;
-        $result->action      = $expected_action;
-        $result->actionMatch = true;
-        return $result;
-    }
-
-    if (!function_exists('curl_init')) {
-        error_log("reCAPTCHA: curl no disponible.");
+        error_log("reCAPTCHA: API key no configurada.");
         return false;
     }
 
-    $url  = "https://recaptchaenterprise.googleapis.com/v1/projects/{$project_id}/assessments?key={$api_key}";
-    $body = json_encode([
+    if (!function_exists('curl_init')) {
+        error_log("reCAPTCHA: cURL no está disponible.");
+        return false;
+    }
+
+    $url = "https://recaptchaenterprise.googleapis.com/v1/projects/{$project_id}/assessments?key={$api_key}";
+
+    $payload = [
         'event' => [
             'token'          => $token,
             'siteKey'        => $site_key,
             'expectedAction' => $expected_action,
         ]
-    ]);
+    ];
+
+    $jsonBody = json_encode($payload);
+
+    error_log("reCAPTCHA URL: " . $url);
+    error_log("reCAPTCHA Payload: " . $jsonBody);
 
     $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POST,           true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS,     $body);
-    curl_setopt($ch, CURLOPT_HTTPHEADER,     ['Content-Type: application/json']);
-    curl_setopt($ch, CURLOPT_TIMEOUT,        10);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => $jsonBody,
+        CURLOPT_HTTPHEADER     => [
+            'Content-Type: application/json',
+            'Content-Length: ' . strlen($jsonBody)
+        ],
+        CURLOPT_TIMEOUT        => 30,
+        CURLOPT_SSL_VERIFYPEER => true,
+    ]);
 
     $raw       = curl_exec($ch);
-    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $curl_err  = curl_error($ch);
+    $curlError = curl_error($ch);
+    $curlErrNo = curl_errno($ch);
+    $httpCode  = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
     curl_close($ch);
 
-    if ($raw === false || $http_code !== 200) {
-        error_log("reCAPTCHA Enterprise error: HTTP $http_code — $curl_err");
+    error_log("reCAPTCHA HTTP Code: " . $httpCode);
+
+    if ($curlErrNo) {
+        error_log("reCAPTCHA cURL Error ({$curlErrNo}): {$curlError}");
         return false;
     }
+
+    error_log("reCAPTCHA Raw Response: " . $raw);
 
     $data = json_decode($raw);
-    if (!$data) {
-        error_log("reCAPTCHA Enterprise: respuesta JSON inválida.");
+
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        error_log("reCAPTCHA JSON Error: " . json_last_error_msg());
         return false;
     }
 
-    $result              = new stdClass();
-    $result->success     = $data->tokenProperties->valid  ?? false;
-    $result->score       = $data->riskAnalysis->score     ?? 0.0;
-    $result->action      = $data->tokenProperties->action ?? '';
+    // Si Google devolvió error detallado
+    if (isset($data->error)) {
+        error_log("reCAPTCHA API Error: " . json_encode($data->error));
+        return false;
+    }
+
+    $result = new stdClass();
+    $result->success = $data->tokenProperties->valid ?? false;
+    $result->score = $data->riskAnalysis->score ?? 0.0;
+    $result->action = $data->tokenProperties->action ?? '';
     $result->actionMatch = ($result->action === $expected_action);
+
+    // Logs útiles
+    error_log("reCAPTCHA valid: " . ($result->success ? 'true' : 'false'));
+    error_log("reCAPTCHA action: " . $result->action);
+    error_log("reCAPTCHA expected action: " . $expected_action);
+    error_log("reCAPTCHA action match: " . ($result->actionMatch ? 'true' : 'false'));
+    error_log("reCAPTCHA score: " . $result->score);
+
+    // Si token invalid, registrar reason
+    if (
+        isset($data->tokenProperties->invalidReason) &&
+        !empty($data->tokenProperties->invalidReason)
+    ) {
+        error_log("reCAPTCHA invalid reason: " . $data->tokenProperties->invalidReason);
+    }
 
     return $result;
 }
