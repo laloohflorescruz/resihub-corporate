@@ -104,21 +104,14 @@ function verify_recaptcha_enterprise($token, $site_key, $project_id, $api_key, $
     $result->score = $data->riskAnalysis->score ?? 0.0;
     $result->action = $data->tokenProperties->action ?? '';
     $result->actionMatch = ($result->action === $expected_action);
+    $result->invalidReason = $data->tokenProperties->invalidReason ?? '';
 
-    // Logs útiles
     error_log("reCAPTCHA valid: " . ($result->success ? 'true' : 'false'));
     error_log("reCAPTCHA action: " . $result->action);
     error_log("reCAPTCHA expected action: " . $expected_action);
     error_log("reCAPTCHA action match: " . ($result->actionMatch ? 'true' : 'false'));
     error_log("reCAPTCHA score: " . $result->score);
-
-    // Si token invalid, registrar reason
-    if (
-        isset($data->tokenProperties->invalidReason) &&
-        !empty($data->tokenProperties->invalidReason)
-    ) {
-        error_log("reCAPTCHA invalid reason: " . $data->tokenProperties->invalidReason);
-    }
+    error_log("reCAPTCHA invalid reason: " . $result->invalidReason);
 
     return $result;
 }
@@ -141,7 +134,8 @@ if (empty($recaptcha_token)) {
     $rc = verify_recaptcha_enterprise($recaptcha_token, $recaptcha_site_key, $recaptcha_project_id, $recaptcha_api_key, $expected_action);
 
     if (!$rc || !$rc->success) {
-        $errors[] = "Verificación de seguridad fallida. Por favor, intenta nuevamente.";
+        $reason = ($rc && !empty($rc->invalidReason)) ? " [{$rc->invalidReason}]" : "";
+        $errors[] = "Verificación de seguridad fallida{$reason}. Por favor, intenta nuevamente.";
     } elseif (!$rc->actionMatch) {
         $errors[] = "La acción de seguridad no coincide. Por favor, intenta nuevamente.";
     } elseif ($rc->score < $recaptcha_score_threshold) {
