@@ -7,9 +7,9 @@ $from_name = "ResiHub Contact Form";
 // Google reCAPTCHA Enterprise Configuration
 // API key: obtén una en https://console.cloud.google.com/apis/credentials (proyecto: crudcreativo)
 // Habilita "reCAPTCHA Enterprise API" y crea una clave de API sin restricciones (o restringida a este dominio)
-$recaptcha_site_key     = "6LfNhuMsAAAAAG-XBXG2bbs-8uI5YzlaUQB6y0le";
+$recaptcha_site_key     = "6LcIj-MsAAAAAM5DekZJo1AL7soL1HkJvPPMB05G";
 $recaptcha_api_key      = "AIzaSyAfKfJSaKic87ECrjXinv6GS2zFavBXYZI"; // ← Pegar aquí la API key de Google Cloud
-$recaptcha_project_id   = "crudcreativo";
+$recaptcha_project_id   = "resihub-477313";
 $recaptcha_score_threshold = 0.5;
 
 $recaptcha_actions = [
@@ -32,14 +32,24 @@ function validate_email($email) {
 }
 
 function verify_recaptcha_enterprise($token, $site_key, $project_id, $api_key, $expected_action) {
+    $result = new stdClass();
+    $result->success = false;
+    $result->score = 0.0;
+    $result->action = '';
+    $result->actionMatch = false;
+    $result->invalidReason = '';
+    $result->debugError = '';
+
     if (empty($api_key)) {
+        $result->debugError = 'API_KEY_EMPTY';
         error_log("reCAPTCHA: API key no configurada.");
-        return false;
+        return $result;
     }
 
     if (!function_exists('curl_init')) {
+        $result->debugError = 'CURL_NOT_AVAILABLE';
         error_log("reCAPTCHA: cURL no está disponible.");
-        return false;
+        return $result;
     }
 
     $url = "https://recaptchaenterprise.googleapis.com/v1/projects/{$project_id}/assessments?key={$api_key}";
@@ -80,8 +90,9 @@ function verify_recaptcha_enterprise($token, $site_key, $project_id, $api_key, $
     error_log("reCAPTCHA HTTP Code: " . $httpCode);
 
     if ($curlErrNo) {
+        $result->debugError = "CURL_ERROR_{$curlErrNo}: {$curlError}";
         error_log("reCAPTCHA cURL Error ({$curlErrNo}): {$curlError}");
-        return false;
+        return $result;
     }
 
     error_log("reCAPTCHA Raw Response: " . $raw);
@@ -89,17 +100,17 @@ function verify_recaptcha_enterprise($token, $site_key, $project_id, $api_key, $
     $data = json_decode($raw);
 
     if (json_last_error() !== JSON_ERROR_NONE) {
+        $result->debugError = 'JSON_DECODE_ERROR: ' . json_last_error_msg();
         error_log("reCAPTCHA JSON Error: " . json_last_error_msg());
-        return false;
+        return $result;
     }
 
-    // Si Google devolvió error detallado
     if (isset($data->error)) {
+        $result->debugError = 'API_ERROR_' . ($data->error->code ?? '?') . ': ' . ($data->error->message ?? '');
         error_log("reCAPTCHA API Error: " . json_encode($data->error));
-        return false;
+        return $result;
     }
 
-    $result = new stdClass();
     $result->success = $data->tokenProperties->valid ?? false;
     $result->score = $data->riskAnalysis->score ?? 0.0;
     $result->action = $data->tokenProperties->action ?? '';
@@ -133,9 +144,9 @@ if (empty($recaptcha_token)) {
 } else {
     $rc = verify_recaptcha_enterprise($recaptcha_token, $recaptcha_site_key, $recaptcha_project_id, $recaptcha_api_key, $expected_action);
 
-    if (!$rc || !$rc->success) {
-        $reason = ($rc && !empty($rc->invalidReason)) ? " [{$rc->invalidReason}]" : "";
-        $errors[] = "Verificación de seguridad fallida{$reason}. Por favor, intenta nuevamente.";
+    if (!$rc->success) {
+        $detail = !empty($rc->debugError) ? $rc->debugError : (!empty($rc->invalidReason) ? $rc->invalidReason : 'UNKNOWN');
+        $errors[] = "Verificación de seguridad fallida [{$detail}]. Por favor, intenta nuevamente.";
     } elseif (!$rc->actionMatch) {
         $errors[] = "La acción de seguridad no coincide. Por favor, intenta nuevamente.";
     } elseif ($rc->score < $recaptcha_score_threshold) {

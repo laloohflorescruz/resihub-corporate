@@ -133,7 +133,7 @@
         });
     </script>
     <!-- Google reCAPTCHA Enterprise -->
-   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfNhuMsAAAAAG-XBXG2bbs-8uI5YzlaUQB6y0le"></script>
+   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcIj-MsAAAAAM5DekZJo1AL7soL1HkJvPPMB05G"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -3339,7 +3339,7 @@
                 try {
                     // Execute reCAPTCHA Enterprise with form-specific action
                     await new Promise((resolve) => grecaptcha.enterprise.ready(resolve));
-                    const token = await grecaptcha.enterprise.execute('6LfNhuMsAAAAAG-XBXG2bbs-8uI5YzlaUQB6y0le', { action: recaptchaAction });
+                    const token = await grecaptcha.enterprise.execute('6LcIj-MsAAAAAM5DekZJo1AL7soL1HkJvPPMB05G', { action: recaptchaAction });
 
                     // Get form data
                     const formData = new FormData(form);
