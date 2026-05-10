@@ -7,7 +7,7 @@ $from_name = "ResiHub Contact Form";
 // Google reCAPTCHA Enterprise Configuration
 // API key: obtén una en https://console.cloud.google.com/apis/credentials (proyecto: crudcreativo)
 // Habilita "reCAPTCHA Enterprise API" y crea una clave de API sin restricciones (o restringida a este dominio)
-$recaptcha_site_key     = "6Le8TOIsAAAAACajI_V219VXY04ULHypHIU3qudw";
+$recaptcha_site_key     = "6LfNhuMsAAAAAG-XBXG2bbs-8uI5YzlaUQB6y0le";
 $recaptcha_api_key      = "AIzaSyAfKfJSaKic87ECrjXinv6GS2zFavBXYZI"; // ← Pegar aquí la API key de Google Cloud
 $recaptcha_project_id   = "crudcreativo";
 $recaptcha_score_threshold = 0.5;
