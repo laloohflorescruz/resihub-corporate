@@ -2960,14 +2960,14 @@
                                         *</label>
                                     <input type="email" id="start-email" name="email" required
                                         class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all duration-200 bg-white"
-                                        placeholder="tu@email.com">
+                                        placeholder="tu@email.com" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Ingresa un correo válido. Ej: usuario@dominio.com">
                                 </div>
                                 <div class="sm:col-span-2">
                                     <label for="start-phone"
                                         class="block text-sm font-medium text-gray-600 mb-1.5">Teléfono *</label>
                                     <input type="tel" id="start-phone" name="phone" required
                                         class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all duration-200 bg-white"
-                                        placeholder="+1 (829) 556-2244">
+                                        placeholder="+1 (829) 556-2244" pattern="\+?[\d\s()\-\.]{7,20}" title="Ingresa un teléfono válido. Ej: +1 829 556-2244">
                                 </div>
                             </div>
                         </div>

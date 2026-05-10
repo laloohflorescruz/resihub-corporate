@@ -398,9 +398,9 @@
                         </tr>
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="p-4 text-gray-600">Módulos Incluidos</td>
-                            <td class="p-4 text-center font-medium text-gray-800">8 esenciales</td>
-                            <td class="p-4 text-center font-medium text-gray-800">14 módulos</td>
-                            <td class="p-4 text-center font-medium text-purple-700">Todos (19+)</td>
+                            <td class="p-4 text-center font-medium text-gray-800">10 esenciales</td>
+                            <td class="p-4 text-center font-medium text-gray-800">15 módulos</td>
+                            <td class="p-4 text-center font-medium text-purple-700">Todos (20)</td>
                         </tr>
 
                         <!-- Administration Section -->
@@ -441,7 +441,19 @@
                             <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
                         </tr>
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="p-4 text-gray-600">Documentos Compartidos</td>
+                            <td class="p-4 text-gray-600">Gestión de Documentos</td>
+                            <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
+                            <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
+                            <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-4 text-gray-600">Solicitudes de Servicio</td>
+                            <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
+                            <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
+                            <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-4 text-gray-600">Calendario de Eventos</td>
                             <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
                             <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
                             <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
@@ -536,6 +548,24 @@
                         </tr>
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="p-4 text-gray-600">Reparaciones y Seguimiento</td>
+                            <td class="p-4 text-center"><span class="text-gray-300 text-xl">&#10005;</span></td>
+                            <td class="p-4 text-center"><span class="text-gray-300 text-xl">&#10005;</span></td>
+                            <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-4 text-gray-600">Gestión de Incidentes</td>
+                            <td class="p-4 text-center"><span class="text-gray-300 text-xl">&#10005;</span></td>
+                            <td class="p-4 text-center"><span class="text-gray-300 text-xl">&#10005;</span></td>
+                            <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-4 text-gray-600">Gestión de Empleados</td>
+                            <td class="p-4 text-center"><span class="text-gray-300 text-xl">&#10005;</span></td>
+                            <td class="p-4 text-center"><span class="text-gray-300 text-xl">&#10005;</span></td>
+                            <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-4 text-gray-600">Gestión Multi-Propiedad</td>
                             <td class="p-4 text-center"><span class="text-gray-300 text-xl">&#10005;</span></td>
                             <td class="p-4 text-center"><span class="text-gray-300 text-xl">&#10005;</span></td>
                             <td class="p-4 text-center"><span class="text-green-500 text-xl">&#10003;</span></td>
@@ -1187,14 +1217,14 @@
                                         *</label>
                                     <input type="email" id="start-email" name="email" required
                                         class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all duration-200 bg-white"
-                                        placeholder="tu@email.com">
+                                        placeholder="tu@email.com" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Ingresa un correo válido. Ej: usuario@dominio.com">
                                 </div>
                                 <div class="sm:col-span-2">
                                     <label for="start-phone"
                                         class="block text-sm font-medium text-gray-600 mb-1.5">Teléfono *</label>
                                     <input type="tel" id="start-phone" name="phone" required
                                         class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all duration-200 bg-white"
-                                        placeholder="+1 (829) 556-2244">
+                                        placeholder="+1 (829) 556-2244" pattern="\+?[\d\s()\-\.]{7,20}" title="Ingresa un teléfono válido. Ej: +1 829 556-2244">
                                 </div>
                             </div>
                         </div>
