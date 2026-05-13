@@ -52,7 +52,7 @@
 
 
     <!-- Google reCAPTCHA Enterprise -->
-       <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcIj-MsAAAAAM5DekZJo1AL7soL1HkJvPPMB05G"></script>
+       <script src="https://www.google.com/recaptcha/enterprise.js?render=6LewSdksAAAAAOcEeGnJ3B1U2vQey92BiadZm1a7"></script>
 
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -1260,7 +1260,7 @@
                 try {
                     // Get reCAPTCHA token with form-specific action
                     await new Promise((resolve) => grecaptcha.enterprise.ready(resolve));
-                    const recaptchaToken = await grecaptcha.enterprise.execute('6LcIj-MsAAAAAM5DekZJo1AL7soL1HkJvPPMB05G', { action: 'get_resihub' });
+                    const recaptchaToken = await grecaptcha.enterprise.execute('6LewSdksAAAAAOcEeGnJ3B1U2vQey92BiadZm1a7', { action: 'get_resihub' });
 
                     const formData = new FormData(getForm);
                     formData.append('recaptcha_token', recaptchaToken);

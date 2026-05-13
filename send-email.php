@@ -5,11 +5,10 @@ $from_email = "noreply@resihubapp.com";
 $from_name = "ResiHub Contact Form";
 
 // Google reCAPTCHA Enterprise Configuration
-// API key: obtén una en https://console.cloud.google.com/apis/credentials (proyecto: crudcreativo)
-// Habilita "reCAPTCHA Enterprise API" y crea una clave de API sin restricciones (o restringida a este dominio)
-$recaptcha_site_key     = "6LcIj-MsAAAAAM5DekZJo1AL7soL1HkJvPPMB05G";
-$recaptcha_api_key      = "AIzaSyAfKfJSaKic87ECrjXinv6GS2zFavBXYZI"; // ← Pegar aquí la API key de Google Cloud
-$recaptcha_project_id   = "resihub-477313";
+$_env = parse_ini_file(__DIR__ . '/.env') ?: [];
+$recaptcha_site_key     = $_env['RECAPTCHA_SITE_KEY']   ?? '';
+$recaptcha_api_key      = $_env['RECAPTCHA_API_KEY']    ?? '';
+$recaptcha_project_id   = $_env['RECAPTCHA_PROJECT_ID'] ?? '';
 $recaptcha_score_threshold = 0.5;
 
 $recaptcha_actions = [
